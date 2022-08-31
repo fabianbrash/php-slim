@@ -8,10 +8,16 @@ metadata:
     #apps.tanzu.vmware.com/has-tests: true
   namespace: php
 spec:
+  build:
+    env:
+    - name: BP_PHP_WEB_DIR
+      value: app
   params:
   - name: annotations
     value:
       autoscaling.knative.dev/minScale: "2"
+  - name: clusterBuilder
+    value: full
   source:
     git:
       url: https://github.com/fabianbrash/php-slim.git
