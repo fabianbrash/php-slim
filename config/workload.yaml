@@ -11,7 +11,7 @@ spec:
   build:
     env:
     - name: BP_PHP_WEB_DIR
-      value: public
+      value: /workspace/public
   params:
   - name: annotations
     value:
